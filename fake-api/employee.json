@@ -1,28 +1,46 @@
 {
   "employees": [
     {
-      "name": "Erdem Enes Şahin",
-      "department": "Game Developer",
-      "salary": 30000,
-      "id": "1e63"
-    },
-    {
       "name": "Ümit Mamuk",
       "department": "Front-end",
-      "salary": 20000,
-      "id": "733a"
+      "salary": 2000,
+      "id": "a27d"
     },
     {
       "name": "Erolhan Kamçı",
-      "department": "Front-end",
-      "salary": 15000,
-      "id": "75b7"
+      "department": "Web Developer",
+      "salary": 3000000,
+      "id": "d041"
+    },
+    {
+      "id": "c741",
+      "name": "Mehmet Çay",
+      "department": "Back-end",
+      "salary": 20000
+    },
+    {
+      "name": "Erdem Enes Şahin",
+      "department": "Game Developer",
+      "salary": 35000,
+      "id": "230b"
     },
     {
       "name": "Hamza Sezai Kars",
-      "department": "cyber security",
-      "salary": 25000,
-      "id": "4b6a"
+      "department": "Cyber Security",
+      "salary": 27000,
+      "id": "87e9"
+    },
+    {
+      "name": "Ayberk Çıkmış",
+      "department": "Mobil Developer",
+      "salary": 24000,
+      "id": "4007"
+    },
+    {
+      "name": "Sezgin Sevinç",
+      "department": "Back-end",
+      "salary": 15000000,
+      "id": "1332"
     }
   ]
 }

@@ -27,6 +27,7 @@ function getAllEmployees() {
     ui.addEmployeesToUI(employees);
   });
 }
+
 function addEmployee(e) {
   const employeeName = inputName.value.trim();
   const employeeDepartment = inputDepartment.value.trim();
@@ -52,6 +53,7 @@ function addEmployee(e) {
   ui.clearInputs();
   e.preventDefault();
 }
+
 function updateOrDelete(e) {
   if (e.target.id === "delete-employee") {
     deleteEmployee(e.target);
@@ -59,6 +61,7 @@ function updateOrDelete(e) {
     updateEmployeeController(e.target.parentElement.parentElement);
   }
 }
+
 function deleteEmployee(targetEmployee) {
   // Target Element a etiketini gösteriyor.
   const id =
@@ -69,6 +72,7 @@ function deleteEmployee(targetEmployee) {
     ui.deleteEmployeeFromUI(targetEmployee.parentElement.parentElement);
   });
 }
+
 function updateEmployeeController(targetEmployee) {
   ui.toggleUpdateButton(targetEmployee);
 
@@ -81,6 +85,7 @@ function updateEmployeeController(targetEmployee) {
     updateState = null;
   }
 }
+
 function updateEmployee() {
   if (updateState) {
     // Güncelleme işlemi
@@ -94,6 +99,8 @@ function updateEmployee() {
       .then((updateEmployee) => {
         ui.updateEmployeeOnUI(updateEmployee, updateState.updateParent);
         ui.clearInputs();
+        ui.toggleUpdateButton(updateState.updateParent);
+        updateState = null;
       })
       .catch((err) => console.error(err));
   }
