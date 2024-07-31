@@ -57,10 +57,24 @@ export class UI {
       this.clearInputs();
     }
   }
-    addEmployeeInfoToInputs(target) {
-        const children = target.children;
-        this.employeeName.value = children[0].textContent;
-        this.employeeDepartment.value = children[1].textContent;
-        this.employeeSalary.value = children[2].textContent;
-    }
+  addEmployeeInfoToInputs(target) {
+    const children = target.children;
+    this.employeeName.value = children[0].textContent;
+    this.employeeDepartment.value = children[1].textContent;
+    this.employeeSalary.value = children[2].textContent;
+  }
+
+  updateEmployeeOnUI(employee, parent) {
+    parent.innerHTML = `
+        <tr>
+          <td>${employee.name}</td>
+          <td>${employee.department}</td>
+          <td>${employee.salary}</td>
+          <td>${employee.id}</td>
+          <td><a href="#" id = "update-employee" class= "btn btn-danger">Güncelle</a></td>
+          <td><a href="#" id = "delete-employee" class= "btn btn-danger">Sil</a></td>
+        </tr>
+        `;
+    this.clearInputs();
+  }
 }

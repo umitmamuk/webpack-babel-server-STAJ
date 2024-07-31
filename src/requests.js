@@ -3,11 +3,14 @@ export class Requset {
     this.url = url;
   }
 
+  // Tüm Verileri Alma İşlemi
   async get() {
     const response = await fetch(this.url);
     const responseData = await response.json();
     return responseData;
   }
+
+  // Ekleme İşlemi
   async post(data) {
     const response = await fetch(this.url, {
       method: "POST",
@@ -19,6 +22,8 @@ export class Requset {
     const responseData = await response.json();
     return responseData;
   }
+
+  //Güncelleme İşlemi
   async put(id, data) {
     const response = await fetch(this.url + "/" + id, {
       method: "PUT",
@@ -30,6 +35,8 @@ export class Requset {
     const responseData = await response.json();
     return responseData;
   }
+
+  // Silme İşlemi
   async delete(id) {
     const response = await fetch(this.url + "/" + id, {
       method: "DELETE",

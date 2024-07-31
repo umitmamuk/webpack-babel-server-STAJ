@@ -11,13 +11,15 @@ const employeeList = document.getElementById("employees");
 const request = new Requset("http://localhost:3000/employees");
 const ui = new UI();
 
+let updateState = null;
+
 eventListeners();
 
 function eventListeners() {
   document.addEventListener("DOMContentLoaded", getAllEmployees);
   form.addEventListener("submit", addEmployee);
   employeeList.addEventListener("click", updateOrDelete);
-  // updateButton.addEventListener("click", updateEmployee);
+  updateButton.addEventListener("click", updateEmployee);
 }
 
 function getAllEmployees() {
@@ -69,4 +71,30 @@ function deleteEmployee(targetEmployee) {
 }
 function updateEmployeeController(targetEmployee) {
   ui.toggleUpdateButton(targetEmployee);
+
+  if (updateState === null) {
+    updateState = {
+      updateID: targetEmployee.children[3].textContent,
+      updateParent: targetEmployee,
+    };
+  } else {
+    updateState = null;
+  }
+}
+function updateEmployee() {
+  if (updateState) {
+    // Güncelleme işlemi
+    const data = {
+      name: inputName.value.trim(),
+      department: inputDepartment.value.trim(),
+      salary: Number(inputSalary.value.trim()),
+    };
+    request
+      .put(updateState.updateID, data)
+      .then((updateEmployee) => {
+        ui.updateEmployeeOnUI(updateEmployee, updateState.updateParent);
+        ui.clearInputs();
+      })
+      .catch((err) => console.error(err));
+  }
 }
