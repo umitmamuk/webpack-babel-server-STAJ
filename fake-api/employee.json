@@ -1,0 +1,28 @@
+{
+  "employees": [
+    {
+      "id": "1e63",
+      "name": "Ömer Faruk Başaran",
+      "department": "industrial electrical installation",
+      "salary": 20000
+    },
+    {
+      "id": "733a",
+      "name": "Ümit Mamuk",
+      "department": "Front-end",
+      "salary": 15000
+    },
+    {
+      "id": "75b7",
+      "name": "Erolhan Kamçı",
+      "department": "Front-end",
+      "salary": 155000
+    },
+    {
+      "id": "4b6a",
+      "name": "Veli",
+      "department": "Back-end",
+      "salary": 1321312
+    }
+  ]
+}
